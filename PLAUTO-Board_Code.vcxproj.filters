@@ -21,5 +21,11 @@
     <ClInclude Include="__vm\.PLAUTO-Board_Code.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="param.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="param_uni.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
