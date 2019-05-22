@@ -20,3 +20,8 @@
 	constexpr auto DINPLA = D6;
 	constexpr auto CSPLA = 3;
 	constexpr auto CLKPLA = 1;
+
+//Configuração Display
+	//Tamanho
+	constexpr auto disp_l = 16;
+	constexpr auto disp_a = 2;
