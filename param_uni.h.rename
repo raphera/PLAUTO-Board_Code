@@ -1,0 +1,4 @@
+#pragma once
+//Configuração Wi-Fi
+const char* ssid = "VIVOFIBRA-5C6C_EXT";
+const char* password = "c662005c6c";
