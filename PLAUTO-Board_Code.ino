@@ -95,7 +95,7 @@ void setup() {
 			Serial.println("Falha ao iniciar OTA");
 		}
 		else if (error == OTA_CONNECT_ERROR) {
-			Serial.println("Falha na Conex�o");
+			Serial.println("Falha na Conexao");
 		}
 		else if (error == OTA_RECEIVE_ERROR) {
 			Serial.println("Falha no Recebimento");
