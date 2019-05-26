@@ -11,7 +11,6 @@ bool aux = false;
 //Inclusão de Parâmetros
 	//Gerais
 	#include "param.h"
-	#include "LcdBarGraphX.h"
 
 	//Únicos
 	#include "param_uni.h"
@@ -20,6 +19,7 @@ bool aux = false;
 	//Teceiras
 	#include "LiquidCrystal_I2C.h"
 	#include "FPS_GT511C3.h"
+	#include "LcdBarGraphX.h"
 
 	//Inclusas
 	#include "SoftwareSerial.h"
@@ -75,6 +75,10 @@ void setup() {
 		});
 	ArduinoOTA.onEnd([]() {
 		Serial.println("\nEnd");
+		lcd.setCursor(0, 0);
+		lcd.print("                ");
+		lcd.setCursor(0, 0);
+		lcd.print("Finalizando...");
 		});
 	ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
 		Serial.printf("Progresso: %u%%\r\n", (progress / (total / 100)));
