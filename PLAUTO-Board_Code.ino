@@ -5,17 +5,17 @@
  E-mail:	raphaeldefreitas2009@gmail.com
 */
 
-//Variáveis Auxiliares
+//Variaveis Auxiliares
 bool aux = false;
 
-//Inclusão de Parâmetros
+//Inclusao de Parametros
 	//Gerais
 	#include "param.h"
 
-	//Únicos
+	//Unicos
 	#include "param_uni.h"
 
-//Bibliotecas Necessárias
+//Bibliotecas Necessarias
 	//Teceiras
 	#include "LiquidCrystal_I2C.h"
 	#include "FPS_GT511C3.h"
@@ -35,7 +35,7 @@ LcdBarGraphX lbg(&lcd, 16, 0, 1);
 
 void setup() {
 	pinMode(PRELE, OUTPUT);
-	digitalWrite(PRELE, HIGH); //Lógica inversa (configuração do IO esp8266)
+	digitalWrite(PRELE, HIGH); //Logica inversa (configuracao do IO esp8266)
 	Serial.begin(115200);
 	Serial.println("Iniciou com sucesso!");
 	Serial.print("Frequencia da CPU: " + String(ESP.getCpuFreqMHz()) + "Mhz\n");
@@ -49,7 +49,7 @@ void setup() {
 	fps.Open();
 	fps.SetLED(true);
 
-	//Inicialização do Wi-Fi
+	//Inicializacao do Wi-Fi
 	WiFi.mode(WIFI_STA);
 	WiFi.begin(ssid, password);
 	while (WiFi.waitForConnectResult() != WL_CONNECTED) {
@@ -71,7 +71,7 @@ void setup() {
 		}
 
 		// NOTE: if updating SPIFFS this would be the place to unmount SPIFFS using SPIFFS.end()
-		Serial.println("Iniciando atualização " + type);
+		Serial.println("Iniciando atualizacao " + type);
 		});
 	ArduinoOTA.onEnd([]() {
 		Serial.println("\nEnd");
@@ -89,13 +89,13 @@ void setup() {
 	ArduinoOTA.onError([](ota_error_t error) {
 		Serial.printf("Erro[%u]: ", error);
 		if (error == OTA_AUTH_ERROR) {
-			Serial.println("Falha na Autenticação");
+			Serial.println("Falha na Autenticacao");
 		}
 		else if (error == OTA_BEGIN_ERROR) {
 			Serial.println("Falha ao iniciar OTA");
 		}
 		else if (error == OTA_CONNECT_ERROR) {
-			Serial.println("Falha na Conexão");
+			Serial.println("Falha na Conexao");
 		}
 		else if (error == OTA_RECEIVE_ERROR) {
 			Serial.println("Falha no Recebimento");
